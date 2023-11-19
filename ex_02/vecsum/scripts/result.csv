@@ -1,0 +1,23 @@
+ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime
+### Starting TaskPrologue of job 2198257 on m0139 at Sa 18. Nov 12:44:11 CET 2023
+#   SLURM_JOB_NODELIST=m0139
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+1024,10802673137.420732,1590335,1000000
+### Starting TaskPrologue of job 2198258 on m0139 at Sa 18. Nov 12:44:18 CET 2023
+#   SLURM_JOB_NODELIST=m0139
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+2048,7586505448.812777,1132265,1000000
