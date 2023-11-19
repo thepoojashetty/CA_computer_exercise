@@ -1,0 +1,30 @@
+### Starting TaskPrologue of job 2186571 on m0302 at Tue Nov 14 10:30:17 CET 2023
+#   SLURM_JOB_NODELIST=m0302
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+=== JOB_STATISTICS ===
+=== current date     : Tue Nov 14 10:30:22 CET 2023
+= Job-ID             : 2186571 on meggie
+= Job-Name           : CA_EX1
+= Job-Command        : ./meggie.sh
+= Initial workdir    : /home/hpc/rzku/hpcv720h/ex_01/scripts
+= Queue/Partition    : work
+= Slurm account      : rzku with QOS=normal
+= Requested resources: cpu=20,node=1,billing=20 for 02:00:00
+= Elapsed runtime    : 00:00:05
+= Total RAM usage    : 0.0 GiB 
+= Node list          : m0302
+= Subm/Elig/Start/End: 2023-11-14T10:30:16 / 2023-11-14T10:30:16 / 2023-11-14T10:30:16 / 2023-11-14T10:30:21
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody          4.0K   500.0G   750.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/hpc          185.1M    52.4G   104.9G        N/A   2,350      500K   1,000K        N/A    
+    /home/vault          0.0K   524.3G  1048.6G        N/A       1      200K     400K        N/A    
+======================

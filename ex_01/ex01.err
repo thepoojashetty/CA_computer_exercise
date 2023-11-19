@@ -1,0 +1,39 @@
++ set -v
+
+# Load module with icc compiler
+module load intel
++ module load intel
++ local _mlredir=0
++ '[' -n '' ']'
++ case " $@ " in
++ '[' 0 -eq 0 ']'
++ _module_raw load intel
+++ /usr/bin/tclsh /apps/modules/modulecmd.tcl bash load intel
++ eval ''
++ _mlstatus=0
++ return 0
+
+# TODO allocate a compute node
+
+# This line creates / overrides a result csv file
+echo "ArraySize,MegaUpdatesPerSecond,ActualRuntime,MinimalRuntime,EdgeSize" > result.csv
++ echo ArraySize,MegaUpdatesPerSecond,ActualRuntime,MinimalRuntime,EdgeSize
+
+# TODO run benchmark 1
+# execute measurement with for loop
+# 32 measurement points, exponentially distributed: 1 KiB - 128 MiB, each with 1000 ms as minimal runtime
+# results should be appended to the result.csv (see >> operator)
+
+#for i in {0..32}
+#do
+#    array_size=$((2**i))
+#    echo $array_size
+#    srun ../bin/jacobi $array_size 1000 >> result.csv
+srun ../bin/jacobi 1 1000 >> result.csv
++ srun ../bin/jacobi 1 1000
+#done
+# Note: copy the result.csv to a local machine!
+
+touch ready
++ touch ready
+
