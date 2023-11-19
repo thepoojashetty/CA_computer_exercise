@@ -1,0 +1,187 @@
++ set -v
+
+# Load module with icc compiler
+module load intel
++ module load intel
++ local _mlredir=0
++ '[' -n '' ']'
++ case " $@ " in
++ '[' 0 -eq 0 ']'
++ _module_raw load intel
+++ /usr/bin/tclsh /apps/modules/modulecmd.tcl bash load intel
++ eval ''
++ _mlstatus=0
++ return 0
+
+# TODO allocate a compute node
+
+# This line creates / overrides a result csv file
+echo "ArraySize,MegaUpdatesPerSecond,ActualRuntime,MinimalRuntime,EdgeSize" > result_4.csv
++ echo ArraySize,MegaUpdatesPerSecond,ActualRuntime,MinimalRuntime,EdgeSize
+
+# TODO run benchmark 1
+# execute measurement with for loop
+# 32 measurement points, exponentially distributed: 1 KiB - 128 MiB, each with 1000 ms as minimal runtime
+# results should be appended to the result.csv (see >> operator)
+
+for i in {0..32}
+do
+    array_size=$((2**i))
+    echo $array_size
+    srun ../bin/jacobiunroll $array_size 1000 >> result_4.csv
+#srun ../bin/jacobiunroll 1 1000 >> result.csv
+done
++ for i in {0..32}
++ array_size=1
++ echo 1
++ srun ../bin/jacobiunroll 1 1000
++ for i in {0..32}
++ array_size=2
++ echo 2
++ srun ../bin/jacobiunroll 2 1000
++ for i in {0..32}
++ array_size=4
++ echo 4
++ srun ../bin/jacobiunroll 4 1000
++ for i in {0..32}
++ array_size=8
++ echo 8
++ srun ../bin/jacobiunroll 8 1000
++ for i in {0..32}
++ array_size=16
++ echo 16
++ srun ../bin/jacobiunroll 16 1000
++ for i in {0..32}
++ array_size=32
++ echo 32
++ srun ../bin/jacobiunroll 32 1000
++ for i in {0..32}
++ array_size=64
++ echo 64
++ srun ../bin/jacobiunroll 64 1000
++ for i in {0..32}
++ array_size=128
++ echo 128
++ srun ../bin/jacobiunroll 128 1000
++ for i in {0..32}
++ array_size=256
++ echo 256
++ srun ../bin/jacobiunroll 256 1000
++ for i in {0..32}
++ array_size=512
++ echo 512
++ srun ../bin/jacobiunroll 512 1000
++ for i in {0..32}
++ array_size=1024
++ echo 1024
++ srun ../bin/jacobiunroll 1024 1000
++ for i in {0..32}
++ array_size=2048
++ echo 2048
++ srun ../bin/jacobiunroll 2048 1000
++ for i in {0..32}
++ array_size=4096
++ echo 4096
++ srun ../bin/jacobiunroll 4096 1000
++ for i in {0..32}
++ array_size=8192
++ echo 8192
++ srun ../bin/jacobiunroll 8192 1000
++ for i in {0..32}
++ array_size=16384
++ echo 16384
++ srun ../bin/jacobiunroll 16384 1000
++ for i in {0..32}
++ array_size=32768
++ echo 32768
++ srun ../bin/jacobiunroll 32768 1000
++ for i in {0..32}
++ array_size=65536
++ echo 65536
++ srun ../bin/jacobiunroll 65536 1000
++ for i in {0..32}
++ array_size=131072
++ echo 131072
++ srun ../bin/jacobiunroll 131072 1000
++ for i in {0..32}
++ array_size=262144
++ echo 262144
++ srun ../bin/jacobiunroll 262144 1000
++ for i in {0..32}
++ array_size=524288
++ echo 524288
++ srun ../bin/jacobiunroll 524288 1000
++ for i in {0..32}
++ array_size=1048576
++ echo 1048576
++ srun ../bin/jacobiunroll 1048576 1000
++ for i in {0..32}
++ array_size=2097152
++ echo 2097152
++ srun ../bin/jacobiunroll 2097152 1000
++ for i in {0..32}
++ array_size=4194304
++ echo 4194304
++ srun ../bin/jacobiunroll 4194304 1000
++ for i in {0..32}
++ array_size=8388608
++ echo 8388608
++ srun ../bin/jacobiunroll 8388608 1000
++ for i in {0..32}
++ array_size=16777216
++ echo 16777216
++ srun ../bin/jacobiunroll 16777216 1000
++ for i in {0..32}
++ array_size=33554432
++ echo 33554432
++ srun ../bin/jacobiunroll 33554432 1000
++ for i in {0..32}
++ array_size=67108864
++ echo 67108864
++ srun ../bin/jacobiunroll 67108864 1000
+srun: error: m0750: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=2198065.26
++ for i in {0..32}
++ array_size=134217728
++ echo 134217728
++ srun ../bin/jacobiunroll 134217728 1000
+srun: error: m0750: task 0: Out Of Memory
+srun: launch/slurm: _step_signal: Terminating StepId=2198065.27
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=2198065.27. Some of your processes may have been killed by the cgroup out-of-memory handler.
++ for i in {0..32}
++ array_size=268435456
++ echo 268435456
++ srun ../bin/jacobiunroll 268435456 1000
+srun: error: m0750: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=2198065.28
++ for i in {0..32}
++ array_size=536870912
++ echo 536870912
++ srun ../bin/jacobiunroll 536870912 1000
+srun: error: m0750: task 0: Out Of Memory
+srun: launch/slurm: _step_signal: Terminating StepId=2198065.29
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=2198065.29. Some of your processes may have been killed by the cgroup out-of-memory handler.
++ for i in {0..32}
++ array_size=1073741824
++ echo 1073741824
++ srun ../bin/jacobiunroll 1073741824 1000
+srun: error: m0750: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=2198065.30
++ for i in {0..32}
++ array_size=2147483648
++ echo 2147483648
++ srun ../bin/jacobiunroll 2147483648 1000
+srun: error: m0750: task 0: Out Of Memory
+srun: launch/slurm: _step_signal: Terminating StepId=2198065.31
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=2198065.31. Some of your processes may have been killed by the cgroup out-of-memory handler.
++ for i in {0..32}
++ array_size=4294967296
++ echo 4294967296
++ srun ../bin/jacobiunroll 4294967296 1000
+srun: error: m0750: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=2198065.32
+# Note: copy the result.csv to a local machine!
+
+touch ready
++ touch ready
+
