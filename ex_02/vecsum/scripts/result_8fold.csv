@@ -1,1 +1,357 @@
 ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime
+### Starting TaskPrologue of job 2198854 on m0423 at Sun Nov 19 23:11:44 CET 2023
+#   SLURM_JOB_NODELIST=m0423
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+1024,2785040745.553627,1542156,1000000
+### Starting TaskPrologue of job 2198855 on m0423 at Sun Nov 19 23:11:51 CET 2023
+#   SLURM_JOB_NODELIST=m0423
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+2048,2550476842.444058,1683986,1000000
+### Starting TaskPrologue of job 2198856 on m0423 at Sun Nov 19 23:11:58 CET 2023
+#   SLURM_JOB_NODELIST=m0423
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+4096,2632425040.283458,1631563,1000000
+### Starting TaskPrologue of job 2198857 on m0423 at Sun Nov 19 23:12:05 CET 2023
+#   SLURM_JOB_NODELIST=m0423
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+8192,2673363693.515036,1606578,1000000
+### Starting TaskPrologue of job 2198858 on m0423 at Sun Nov 19 23:12:12 CET 2023
+#   SLURM_JOB_NODELIST=m0423
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+16384,2680529779.071488,1602283,1000000
+### Starting TaskPrologue of job 2198859 on m0423 at Sun Nov 19 23:12:19 CET 2023
+#   SLURM_JOB_NODELIST=m0423
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+32768,2642699016.748502,1625220,1000000
+### Starting TaskPrologue of job 2198860 on m0423 at Sun Nov 19 23:12:26 CET 2023
+#   SLURM_JOB_NODELIST=m0423
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+65536,2689759295.083559,1596785,1000000
+### Starting TaskPrologue of job 2198861 on m0423 at Sun Nov 19 23:12:33 CET 2023
+#   SLURM_JOB_NODELIST=m0423
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+131072,2655955753.109873,1617108,1000000
+### Starting TaskPrologue of job 2198862 on m0423 at Sun Nov 19 23:12:40 CET 2023
+#   SLURM_JOB_NODELIST=m0423
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+262144,2670029849.855525,1608584,1000000
+### Starting TaskPrologue of job 2198863 on m0423 at Sun Nov 19 23:12:47 CET 2023
+#   SLURM_JOB_NODELIST=m0423
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+524288,2670239009.038470,1608458,1000000
+### Starting TaskPrologue of job 2198864 on m0415 at Sun Nov 19 23:12:56 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+1048576,2653717392.701264,1618472,1000000
+### Starting TaskPrologue of job 2198865 on m0415 at Sun Nov 19 23:13:03 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+2097152,2661332371.652474,1613841,1000000
+### Starting TaskPrologue of job 2198866 on m0415 at Sun Nov 19 23:13:10 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+4194304,2678725887.229459,1603362,1000000
+### Starting TaskPrologue of job 2198867 on m0415 at Sun Nov 19 23:13:17 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+8388608,2667439658.267014,1610146,1000000
+### Starting TaskPrologue of job 2198868 on m0415 at Sun Nov 19 23:13:24 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+16777216,2664589963.942457,1611868,1000000
+### Starting TaskPrologue of job 2198869 on m0415 at Sun Nov 19 23:13:31 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+33554432,2657171693.574730,1616368,1000000
+### Starting TaskPrologue of job 2198870 on m0415 at Sun Nov 19 23:13:38 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+67108864,2663482842.574873,1612538,1000000
+### Starting TaskPrologue of job 2198871 on m0415 at Sun Nov 19 23:13:45 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+134217728,2662538386.098902,1613110,1000000
+### Starting TaskPrologue of job 2198872 on m0415 at Sun Nov 19 23:13:52 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+268435456,2663225197.092567,1612694,1000000
+### Starting TaskPrologue of job 2198873 on m0415 at Sun Nov 19 23:13:59 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+536870912,2664708992.949480,1611796,1000000
+### Starting TaskPrologue of job 2198874 on m0415 at Sun Nov 19 23:14:06 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+1073741824,2641200642.994277,1626142,1000000
+### Starting TaskPrologue of job 2198875 on m0415 at Sun Nov 19 23:14:13 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+2147483648,2644907418.914034,1623863,1000000
+### Starting TaskPrologue of job 2198876 on m0415 at Sun Nov 19 23:14:20 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+4294967296,2657326230.577241,1616274,1000000
+### Starting TaskPrologue of job 2198877 on m0415 at Sun Nov 19 23:14:26 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+8589934592,2664502352.162420,1611921,1000000
+### Starting TaskPrologue of job 2198878 on m0415 at Sun Nov 19 23:14:33 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+17179869184,2631547622.796790,1632107,1000000
+### Starting TaskPrologue of job 2198879 on m0415 at Sun Nov 19 23:14:38 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+34359738368,2621503201.523718,3276721,1000000
+### Starting TaskPrologue of job 2198880 on m0415 at Sun Nov 19 23:14:45 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+### Starting TaskPrologue of job 2198881 on m0415 at Sun Nov 19 23:14:49 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+### Starting TaskPrologue of job 2198882 on m0415 at Sun Nov 19 23:14:53 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+### Starting TaskPrologue of job 2198883 on m0415 at Sun Nov 19 23:14:56 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+### Starting TaskPrologue of job 2198884 on m0415 at Sun Nov 19 23:15:00 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+### Starting TaskPrologue of job 2198885 on m0415 at Sun Nov 19 23:15:04 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+### Starting TaskPrologue of job 2198886 on m0415 at Sun Nov 19 23:15:08 CET 2023
+#   SLURM_JOB_NODELIST=m0415
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue

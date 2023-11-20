@@ -14,15 +14,15 @@ set -v
 
 # Load module with icc compiler
 module load intel
-
+FOLD_TYPE=8
 # TODO allocate a compute node
 
 # This line creates / overrides a result csv file
-echo "ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime" > result_1fold.csv
-echo "ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime" > result_2fold.csv
-echo "ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime" > result_3fold.csv
-echo "ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime" > result_4fold.csv
-echo "ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime" > result_8fold.csv
+#echo "ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime" > result_1fold.csv
+#echo "ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime" > result_2fold.csv
+#echo "ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime" > result_3fold.csv
+#echo "ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime" > result_4fold.csv
+#echo "ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime" > result_8fold.csv
 
 # TODO run benchmark 1
 # execute measurement with for loop
@@ -31,8 +31,8 @@ echo "ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime" > result_8fold.
 # input parameter:
 # to run an executable:
 # 	srun ../bin/vecSum [size of the vector in KiB]
-FOLD_TYPE=2
-for i in {0..2}
+
+for i in {0..32}
 do
     array_size=$((2**i))
     echo $array_size

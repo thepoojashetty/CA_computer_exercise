@@ -1,16 +1,12 @@
 #include "vec_sum.h"
-//#define ONE_FOLD
-#define TWO_FOLD
-//#define THREE_FOLD
-//#define FOUR_FOLD
-//#define EIGHT_FOLD*/
-
 
 float vec_sum(float *array, uint64_t length) {
 	float *ptr=array;
 	float sum_m[1] = {0.0f};
-	#ifdef ONE_FOLD
+	#if UNROLL_TYPE == 1
 	float sum = 0.0f;
+	
+	#pragma novector
 	#pragma nounroll
 	for(int i=0;i<length;i++){
 		sum = sum + *ptr;
@@ -19,9 +15,11 @@ float vec_sum(float *array, uint64_t length) {
 	sum_m[0] = sum;
 	#endif
 
-	#ifdef TWO_FOLD
+	#if UNROLL_TYPE == 2
 	float sum[2] = {0.0f,0.0f};
 	uint32_t rem = length % 2;
+	
+	#pragma novector
 	#pragma nounroll
 	for(int i=0;i<length-rem;i+=2){
 		sum[0]+= *ptr;
@@ -31,9 +29,11 @@ float vec_sum(float *array, uint64_t length) {
 	sum_m[0] = sum[0] + sum[1];
 	#endif
 
-	#ifdef THREE_FOLD
+	#if UNROLL_TYPE == 3
 	float sum[3] = {0.0f,0.0f,0.0f};
 	uint32_t rem = length % 3;
+	
+	#pragma novector
 	#pragma nounroll
 	for(int i=0;i<length-rem;i+=3){
 		sum[0]+= *ptr;
@@ -47,9 +47,11 @@ float vec_sum(float *array, uint64_t length) {
 	}		
 	#endif
 
-	#ifdef FOUR_FOLD
+	#if UNROLL_TYPE == 4
 	float sum[4] = {0.0f,0.0f,0.0f,0.0f};
 	uint32_t rem = length % 4;
+	
+	#pragma novector
 	#pragma nounroll
 	for(int i=0;i<length-rem;i+=4){
 		sum[0]+= *ptr;
@@ -65,9 +67,11 @@ float vec_sum(float *array, uint64_t length) {
 	}
 	#endif
 
-	#ifdef EIGHT_FOLD
+	#if UNROLL_TYPE == 8
 	float sum[8] = {0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f,0.0f};
 	uint32_t rem = length % 8;
+	
+	#pragma novector
 	#pragma nounroll
 	for(int i=0;i<length-rem;i+=8){
 		sum[0]+= *ptr;

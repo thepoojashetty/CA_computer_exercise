@@ -1,6 +1,10 @@
 #ifndef VEC_SUM_H
 #define VEC_SUM_H
 
+#ifndef UNROLL_TYPE
+    #define UNROLL_TYPE (0)
+#endif
+
 #include <stdint.h>
 
 // Returns the sum of 'length' many array elements
