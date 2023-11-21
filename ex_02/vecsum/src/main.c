@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
 	uint64_t runs             = 0u;
 	uint64_t start            = 0u;
 	uint64_t stop             = 0u;
-	long double  adds_per_second  = 0u;
+	double  adds_per_second  = 0u;
 
 	if(argc != 3 || argv == NULL) {
 		usage_msg();
@@ -54,8 +54,8 @@ int main(int argc, char *argv[]) {
 	//fprintf(stdout,"%"PRIu64 "\n",length);
 	//fprintf(stdout,"%"PRIu64 "\n",actual_runtime);
 
-	adds_per_second = ((long double)(runs*length))/((double)actual_runtime/1000000.0); // Measured performance as floating point additions per second
-	fprintf(stdout, "%" PRIu64 ",%Lf,%" PRIu64 ",%" PRIu64 "\n", array_size_bytes, adds_per_second, actual_runtime, minimal_runtime);
+	adds_per_second = ((double)(runs*length))/((double)actual_runtime/1000000.0); // Measured performance as floating point additions per second
+	fprintf(stdout, "%" PRIu64 ",%lf,%" PRIu64 ",%" PRIu64 "\n", array_size_bytes, adds_per_second, actual_runtime, minimal_runtime);
 
 	return 0;
 }

@@ -1,0 +1,168 @@
++ set -v
+
+# Load module with icc compiler
+module load intel
++ module load intel
++ local _mlredir=0
++ '[' -n '' ']'
++ case " $@ " in
++ '[' 0 -eq 0 ']'
++ _module_raw load intel
+++ /usr/bin/tclsh /apps/modules/modulecmd.tcl bash load intel
++ eval ''
++ _mlstatus=0
++ return 0
+FOLD_TYPE=4
++ FOLD_TYPE=4
+FILE_NAME="result_${FOLD_TYPE}fold.csv"
++ FILE_NAME=result_4fold.csv
+# TODO allocate a compute node
+
+# This line creates / overrides a result csv file
+echo "ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime" > "$FILE_NAME"
++ echo ArraySize,AdditionsPerSecond,ActualRuntime,MinimalRuntime
+
+# TODO run benchmark 1
+# execute measurement with for loop
+# 32 measurement points, exponentially distributed: 1 KiB - 128 MiB, each with 1000 ms as minimal runtime
+# results should be appended to the result.csv (see >> operator)
+# input parameter:
+# to run an executable:
+# 	srun ../bin/vecSum [size of the vector in KiB]
+
+for i in {0..32}
+do
+    array_size=$((2**i))
+    #echo $array_size
+    srun ../bin/vecSum $array_size 1000 >> "$FILE_NAME"
+    #if [ "$FOLD_TYPE" -eq 1 ]; then
+    #    srun ../bin/vecSum $array_size 1000 >> result_1fold.csv
+    #elif [ "$FOLD_TYPE" -eq 2 ]; then
+    #    srun ../bin/vecSum $array_size 1000 >> result_2fold.csv
+    #elif [ "$FOLD_TYPE" -eq 3 ]; then
+    #    srun ../bin/vecSum $array_size 1000 >> result_3fold.csv
+    #elif [ "$FOLD_TYPE" -eq 4 ]; then
+    #    srun ../bin/vecSum $array_size 1000 >> result_4fold.csv
+    #else
+    #    srun ../bin/vecSum $array_size 1000 >> result_8fold.csv     
+    #fi
+    
+done
++ for i in {0..32}
++ array_size=1
++ srun ../bin/vecSum 1 1000
++ for i in {0..32}
++ array_size=2
++ srun ../bin/vecSum 2 1000
++ for i in {0..32}
++ array_size=4
++ srun ../bin/vecSum 4 1000
++ for i in {0..32}
++ array_size=8
++ srun ../bin/vecSum 8 1000
++ for i in {0..32}
++ array_size=16
++ srun ../bin/vecSum 16 1000
++ for i in {0..32}
++ array_size=32
++ srun ../bin/vecSum 32 1000
++ for i in {0..32}
++ array_size=64
++ srun ../bin/vecSum 64 1000
++ for i in {0..32}
++ array_size=128
++ srun ../bin/vecSum 128 1000
++ for i in {0..32}
++ array_size=256
++ srun ../bin/vecSum 256 1000
++ for i in {0..32}
++ array_size=512
++ srun ../bin/vecSum 512 1000
++ for i in {0..32}
++ array_size=1024
++ srun ../bin/vecSum 1024 1000
++ for i in {0..32}
++ array_size=2048
++ srun ../bin/vecSum 2048 1000
++ for i in {0..32}
++ array_size=4096
++ srun ../bin/vecSum 4096 1000
++ for i in {0..32}
++ array_size=8192
++ srun ../bin/vecSum 8192 1000
++ for i in {0..32}
++ array_size=16384
++ srun ../bin/vecSum 16384 1000
++ for i in {0..32}
++ array_size=32768
++ srun ../bin/vecSum 32768 1000
++ for i in {0..32}
++ array_size=65536
++ srun ../bin/vecSum 65536 1000
++ for i in {0..32}
++ array_size=131072
++ srun ../bin/vecSum 131072 1000
++ for i in {0..32}
++ array_size=262144
++ srun ../bin/vecSum 262144 1000
++ for i in {0..32}
++ array_size=524288
++ srun ../bin/vecSum 524288 1000
++ for i in {0..32}
++ array_size=1048576
++ srun ../bin/vecSum 1048576 1000
++ for i in {0..32}
++ array_size=2097152
++ srun ../bin/vecSum 2097152 1000
++ for i in {0..32}
++ array_size=4194304
++ srun ../bin/vecSum 4194304 1000
++ for i in {0..32}
++ array_size=8388608
++ srun ../bin/vecSum 8388608 1000
++ for i in {0..32}
++ array_size=16777216
++ srun ../bin/vecSum 16777216 1000
++ for i in {0..32}
++ array_size=33554432
++ srun ../bin/vecSum 33554432 1000
++ for i in {0..32}
++ array_size=67108864
++ srun ../bin/vecSum 67108864 1000
+srun: error: m0675: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=2199488.26
++ for i in {0..32}
++ array_size=134217728
++ srun ../bin/vecSum 134217728 1000
+srun: error: m0675: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=2199488.27
++ for i in {0..32}
++ array_size=268435456
++ srun ../bin/vecSum 268435456 1000
+srun: error: m0675: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=2199488.28
++ for i in {0..32}
++ array_size=536870912
++ srun ../bin/vecSum 536870912 1000
+srun: error: m0675: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=2199488.29
++ for i in {0..32}
++ array_size=1073741824
++ srun ../bin/vecSum 1073741824 1000
+srun: error: m0675: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=2199488.30
++ for i in {0..32}
++ array_size=2147483648
++ srun ../bin/vecSum 2147483648 1000
+srun: error: m0675: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=2199488.31
++ for i in {0..32}
++ array_size=4294967296
++ srun ../bin/vecSum 4294967296 1000
+srun: error: m0675: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=2199488.32
+# Note: copy the result.csv to a local machine!
+
+touch ready
++ touch ready
+
