@@ -139,47 +139,47 @@ done
 + array_size=67108864
 + echo 67108864
 + srun ../bin/jacobiunroll 67108864 1000
-srun: error: m0750: task 0: Segmentation fault (core dumped)
-srun: launch/slurm: _step_signal: Terminating StepId=2198065.26
+srun: error: m0101: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=2199908.26
 + for i in {0..32}
 + array_size=134217728
 + echo 134217728
 + srun ../bin/jacobiunroll 134217728 1000
-srun: error: m0750: task 0: Out Of Memory
-srun: launch/slurm: _step_signal: Terminating StepId=2198065.27
-slurmstepd: error: Detected 1 oom-kill event(s) in StepId=2198065.27. Some of your processes may have been killed by the cgroup out-of-memory handler.
+srun: error: m0101: task 0: Out Of Memory
+srun: launch/slurm: _step_signal: Terminating StepId=2199908.27
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=2199908.27. Some of your processes may have been killed by the cgroup out-of-memory handler.
 + for i in {0..32}
 + array_size=268435456
 + echo 268435456
 + srun ../bin/jacobiunroll 268435456 1000
-srun: error: m0750: task 0: Segmentation fault (core dumped)
-srun: launch/slurm: _step_signal: Terminating StepId=2198065.28
+srun: error: m0101: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=2199908.28
 + for i in {0..32}
 + array_size=536870912
 + echo 536870912
 + srun ../bin/jacobiunroll 536870912 1000
-srun: error: m0750: task 0: Out Of Memory
-srun: launch/slurm: _step_signal: Terminating StepId=2198065.29
-slurmstepd: error: Detected 1 oom-kill event(s) in StepId=2198065.29. Some of your processes may have been killed by the cgroup out-of-memory handler.
+srun: error: m0101: task 0: Out Of Memory
+srun: launch/slurm: _step_signal: Terminating StepId=2199908.29
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=2199908.29. Some of your processes may have been killed by the cgroup out-of-memory handler.
 + for i in {0..32}
 + array_size=1073741824
 + echo 1073741824
 + srun ../bin/jacobiunroll 1073741824 1000
-srun: error: m0750: task 0: Segmentation fault (core dumped)
-srun: launch/slurm: _step_signal: Terminating StepId=2198065.30
+srun: error: m0101: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=2199908.30
 + for i in {0..32}
 + array_size=2147483648
 + echo 2147483648
 + srun ../bin/jacobiunroll 2147483648 1000
-srun: error: m0750: task 0: Out Of Memory
-srun: launch/slurm: _step_signal: Terminating StepId=2198065.31
-slurmstepd: error: Detected 1 oom-kill event(s) in StepId=2198065.31. Some of your processes may have been killed by the cgroup out-of-memory handler.
+srun: error: m0101: task 0: Out Of Memory
+srun: launch/slurm: _step_signal: Terminating StepId=2199908.31
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=2199908.31. Some of your processes may have been killed by the cgroup out-of-memory handler.
 + for i in {0..32}
 + array_size=4294967296
 + echo 4294967296
 + srun ../bin/jacobiunroll 4294967296 1000
-srun: error: m0750: task 0: Segmentation fault (core dumped)
-srun: launch/slurm: _step_signal: Terminating StepId=2198065.32
+srun: error: m0101: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=2199908.32
 # Note: copy the result.csv to a local machine!
 
 touch ready

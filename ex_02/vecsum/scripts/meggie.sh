@@ -14,7 +14,7 @@ set -v
 
 # Load module with icc compiler
 module load intel
-FOLD_TYPE=8
+FOLD_TYPE=4
 FILE_NAME="result_${FOLD_TYPE}fold.csv"
 # TODO allocate a compute node
 

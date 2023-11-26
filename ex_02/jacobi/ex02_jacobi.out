@@ -1,5 +1,5 @@
-### Starting TaskPrologue of job 2198065 on m0750 at Fri Nov 17 21:35:55 CET 2023
-#   SLURM_JOB_NODELIST=m0750
+### Starting TaskPrologue of job 2199908 on m0101 at Tue Nov 21 11:08:30 CET 2023
+#   SLURM_JOB_NODELIST=m0101
 #   SLURM_JOB_NUM_NODES=1
 #   SLURM_NTASKS=1
 #   SLURM_NPROCS=1
@@ -42,21 +42,20 @@ Running on cores 0-19 with governor ondemand
 2147483648
 4294967296
 === JOB_STATISTICS ===
-=== current date     : Fri Nov 17 21:41:12 CET 2023
-= Job-ID             : 2198065 on meggie
+=== current date     : Tue Nov 21 11:13:32 CET 2023
+= Job-ID             : 2199908 on meggie
 = Job-Name           : CA_EX2_jacobi
 = Job-Command        : ./meggie.sh
 = Initial workdir    : /home/hpc/rzku/hpcv720h/ex_02/jacobi/scripts
 = Queue/Partition    : work
 = Slurm account      : rzku with QOS=normal
 = Requested resources: cpu=20,node=1,billing=20 for 02:00:00
-= Elapsed runtime    : 00:05:18
-= Total RAM usage    : 37.0 GiB 
-= Node list          : m0750
-= Subm/Elig/Start/End: 2023-11-17T21:35:53 / 2023-11-17T21:35:53 / 2023-11-17T21:35:54 / 2023-11-17T21:41:12
+= Elapsed runtime    : 00:05:03
+= Total RAM usage    : 39.4 GiB 
+= Node list          : m0101
+= Subm/Elig/Start/End: 2023-11-21T11:08:29 / 2023-11-21T11:08:29 / 2023-11-21T11:08:29 / 2023-11-21T11:13:32
 ======================
 === Quota infos ======
     Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
-    /home/vault          0.0K   524.3G  1048.6G        N/A       1      200K     400K        N/A    
-    /home/hpc          218.1M    52.4G   104.9G        N/A   2,650      500K   1,000K        N/A    
+    /home/hpc          202.0M    52.4G   104.9G        N/A   2,821      500K   1,000K        N/A    
 ======================

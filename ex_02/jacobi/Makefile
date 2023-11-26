@@ -1,4 +1,4 @@
-.PHONY: all clean jacobi
+.PHONY: all clean jacobiunroll
 
 ROOT_PATH  := .
 SRC_PATH   := $(ROOT_PATH)/src
