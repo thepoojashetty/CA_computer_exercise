@@ -1,0 +1,9 @@
+Cache level, Cache Size, Jacobi Grid Size, Vector Length
+L1, 32kB,4096,8192
+L2, 256kB,32768,65536
+L3, 25MB, 3276800,6553600
+
+1kB = 1024 bytes
+1MB = (1024)^2 = 1048576 bytes
+double= 8 bytes
+float = 4 bytes

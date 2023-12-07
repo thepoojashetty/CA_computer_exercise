@@ -1,0 +1,50 @@
+### Starting TaskPrologue of job 2224765 on m0229 at Tue Dec  5 14:29:01 CET 2023
+#   SLURM_JOB_NODELIST=m0229
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+=== JOB_STATISTICS ===
+=== current date     : Tue Dec  5 14:32:08 CET 2023
+= Job-ID             : 2224764 on meggie
+= Job-Name           : CA_EX4_jacobi
+= Job-Command        : ./meggie.sh
+= Initial workdir    : /home/hpc/rzku/hpcv720h/ex_04/jacobi/scripts
+= Queue/Partition    : work
+= Slurm account      : rzku with QOS=normal
+= Features           : hwperf
+= Requested resources: cpu=20,node=1,billing=20 for 02:00:00
+= Elapsed runtime    : 00:03:38
+= Total RAM usage    : 32.0 GiB 
+= Node list          : m0209
+= Subm/Elig/Start/End: 2023-12-05T14:28:30 / 2023-12-05T14:28:30 / 2023-12-05T14:28:30 / 2023-12-05T14:32:08
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc          752.9M    52.4G   104.9G        N/A   4,254      500K   1,000K        N/A    
+======================
+=== JOB_STATISTICS ===
+=== current date     : Tue Dec  5 14:32:37 CET 2023
+= Job-ID             : 2224765 on meggie
+= Job-Name           : CA_EX4_jacobi
+= Job-Command        : ./meggie.sh
+= Initial workdir    : /home/hpc/rzku/hpcv720h/ex_04/jacobi/scripts
+= Queue/Partition    : work
+= Slurm account      : rzku with QOS=normal
+= Features           : hwperf
+= Requested resources: cpu=20,node=1,billing=20 for 02:00:00
+= Elapsed runtime    : 00:03:37
+= Total RAM usage    : 32.0 GiB 
+= Node list          : m0229
+= Subm/Elig/Start/End: 2023-12-05T14:28:59 / 2023-12-05T14:28:59 / 2023-12-05T14:29:00 / 2023-12-05T14:32:37
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/woody          4.0K   500.0G   750.0G        N/A       1    5,000K   7,500K        N/A    
+    /home/vault          0.0K   524.3G  1048.6G        N/A       1      200K     400K        N/A    
+    /home/hpc          752.9M    52.4G   104.9G        N/A   4,254      500K   1,000K        N/A    
+======================
