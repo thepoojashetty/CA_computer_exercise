@@ -1,0 +1,4 @@
+Cache Level, Cache Size, dx, Max Jacobi Grid Size
+L1, 32KiB, 1365, 4096
+L2, 256KiB,10922, 32768
+L3, 25 MiB, 1092266, 3276800

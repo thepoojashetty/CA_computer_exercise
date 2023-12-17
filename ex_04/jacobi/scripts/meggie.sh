@@ -22,7 +22,7 @@ module load likwid/5.3.0
 # TODO allocate a compute node
 
 # This line creates / overrides a result csv file
-echo "ArraySize,MegaUpdatesPerSecond,ActualRuntime,MinimalRuntime,EdgeSize" > result_row.csv
+echo "ArraySize,MegaUpdatesPerSecond,ActualRuntime,MinimalRuntime,EdgeSize" > result_col.csv
 
 # TODO run benchmark 1
 # execute measurement with for loop
@@ -31,17 +31,17 @@ echo "ArraySize,MegaUpdatesPerSecond,ActualRuntime,MinimalRuntime,EdgeSize" > re
 # root31(2^17) ^ i = e(i*ln(2^17)/31)
 
 #ARRAY_SIZE=()
-for i in {0..25}
+for i in {0..31}
 do
-    array_size=$((2**i))
-    #ARRAY_SIZE+=($array_size)
+    #array_size=$((2**i))
+    array_size=$(printf "%.0f" "$(echo "e($i*l(2^17)/31)" | bc -l)")
     srun likwid-perfctr -O --stats \
                 -C 0 \
                 -c 0 \
                 -f \
                 -m \
                 -g MEM_UOPS_RETIRED_LOADS_ALL:PMC1,MEM_LOAD_UOPS_RETIRED_L1_HIT:PMC2 \
-                ../bin/jacobi $array_size 1000 >> result_row.csv
+                ../bin/jacobi $array_size 1000 >> result_col.csv
      #srun ../bin/jacobi $array_size 1000 >> result_col.csv
 done
 # Note: copy the result.csv to a local machine!

@@ -1,0 +1,28 @@
+### Starting TaskPrologue of job 2237142 on m0859 at Sun Dec 17 10:09:16 CET 2023
+#   SLURM_JOB_NODELIST=m0859
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+=== JOB_STATISTICS ===
+=== current date     : Sun Dec 17 10:11:49 CET 2023
+= Job-ID             : 2237142 on meggie
+= Job-Name           : CA_EX5_jacobi
+= Job-Command        : ./meggie.sh
+= Initial workdir    : /home/hpc/rzku/hpcv720h/ex_05/jacobi/scripts
+= Queue/Partition    : work
+= Slurm account      : rzku with QOS=normal
+= Requested resources: cpu=20,node=1,billing=20 for 02:00:00
+= Elapsed runtime    : 00:02:34
+= Total RAM usage    : 0.0 GiB 
+= Node list          : m0859
+= Subm/Elig/Start/End: 2023-12-17T10:09:15 / 2023-12-17T10:09:15 / 2023-12-17T10:09:15 / 2023-12-17T10:11:49
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc         1029.6M    52.4G   104.9G        N/A   6,103      500K   1,000K        N/A    
+======================

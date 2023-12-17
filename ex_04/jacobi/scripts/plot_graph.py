@@ -8,19 +8,19 @@ plt.xlabel('ArraySize')
 plt.ylabel('HitRatio')
 plt.xscale('log',base=2)
 
-#plotting for no unrolling
-data_no_unroll=pd.read_csv('result_1.csv')
-x=data_no_unroll['ArraySize']
-y=data_no_unroll['MegaUpdatesPerSecond']
-plt.plot(x,y,label='No Loop Unrolling',marker='.')
+#column_wise
+data_colwise=pd.read_csv('result_col_hit_ratio.csv')
+x=data_colwise['ARRAY_SIZE']
+y=data_colwise['HIT_RATIO']
+plt.plot(x,y,label='ColumnWise Array Access',marker='.')
 
-#plotting for twofold unrolling
-data_twofold=pd.read_csv('result_2.csv')
-x=data_twofold['ArraySize']
-y=data_twofold['MegaUpdatesPerSecond']
-plt.plot(x,y,label='Twofold Unrolling(SSE)',marker='.')
+#row_wise
+data_rowwise=pd.read_csv('result_row_hit_ratio.csv')
+x=data_rowwise['ARRAY_SIZE']
+y=data_rowwise['HIT_RATIO']
+plt.plot(x,y,label='RowWise Array Access',marker='.')
 
 
 plt.legend()
-plt.savefig('jacobi_unroll.png')
+plt.savefig('jacobi_performance.png')
 plt.show()

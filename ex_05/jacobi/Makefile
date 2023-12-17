@@ -9,16 +9,13 @@ INC_PATH  := $(SRC_PATH)/include
 INC_DIRS  := $(sort $(shell find $(INC_PATH) -type d))
 INC_FLAGS := $(addprefix -iquote ,$(INC_DIRS))
 
-CFLAGS_LIKWID := -I/apps/likwid/5.3.0/include -DLIKWID_PERFMON
-LDFLAGS_LIKWID := -pthread -L/apps/likwid/5.3.0/lib/ -llikwid
-
 CC      := icc 
-CFLAGS  := -pg -Wall -pedantic -Werror -std=c99 -O3 $(CFLAGS_LIKWID)#-xHost
-CFLAGS  += -DJACOBI_COL
+CFLAGS  := -Wall -pedantic -Werror -std=c99 -O3 #-xHost
+CFLAGS  += -DCACHE_BLOCKING -DBx=2000
 
-LDFLAGS := $(LDFLAGS_LIKWID)
+LDFLAGS :=
 
-all: jacobi # program is named jacobivect
+all: jacobi # program is named jacobi
 
 clean:
 	rm -rf $(BUILD_PATH) $(BIN_PATH)
