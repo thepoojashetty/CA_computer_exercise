@@ -19,7 +19,7 @@ set -v
 
 
 #salloc.tinygpu --gres=gpu:rtx3080:1 --time=00:30:00
-srun ../bin/stream
+srun ../bin/strbenchmark
 
 touch ready
 
