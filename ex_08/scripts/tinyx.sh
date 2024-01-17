@@ -4,9 +4,9 @@
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:rtx3080:1
 #SBATCH --exclusive
-#SBATCH -t 02:00:00
-#SBATCH -o /home/hpc/rzku/hpcv651h/ex_08/ex08_stream.out
-#SBATCH -e /home/hpc/rzku/hpcv651h/ex_08/ex08_stream.err
+#SBATCH --time 00:30:00
+#SBATCH -o /home/hpc/rzku/hpcv651h/gitrepo/CA_computer_exercise/ex_08/ex08_stream.out
+#SBATCH -e /home/hpc/rzku/hpcv651h/gitrepo/CA_computer_exercise/ex_08/ex08_stream.err
 
 
 # Enable debug and verbose mode
@@ -18,8 +18,9 @@ set -v
 # module load cuda
 
 
-#salloc.tinygpu --gres=gpu:rtx3080:1 --time=00:30:00
-srun ../bin/strbenchmark
-
+#salloc.tinygpu --gres=gpu:rtx3080:1 --time=01:00:00
+#likwid -pin -c E:S0:10:1:1 ../bin/strbenchmark
+#srun ../bin/stream
+srun ../bin/strtriad
 touch ready
 
