@@ -10,6 +10,7 @@
 #include <unistd.h>
 
 void printgrid(double*grid,uint32_t X, uint32_t Y);
+void create_file_dir(char* path);
 
 static void usage_msg(void) {
 	fprintf(stderr, "Usage: ./jacobi <array size in kiB> <minimal runtime in milliseconds>\n");
@@ -31,12 +32,15 @@ int main(int argc, char *argv[]) {
 		usage_msg();
 		return -1;
 	}
+
+	create_file_dir(dirpath);
 	
 	//TODO: parse parameter: size of the vector in KiB
 	//TODO: allocate memory and initialize it
 	//TODO: measurement with a runtime of at least 1 s
 
 	array_size_bytes = strtoull(argv[1],NULL,10)*1048576;
+	// array_size_bytes = strtoull(argv[1],NULL,10)*1024;
 	minimal_runtime = strtoull(argv[2],NULL,10)*1000;
 	//fprintf(stdout,)
 
@@ -81,6 +85,11 @@ int main(int argc, char *argv[]) {
 	//TODO: calculate and print
 	//length number of floating point additions in one vec_sum call
 	//method is called for runs number of times
+	if(array_size_bytes==1048576){
+		sprintf(filepath, "%s/grid.ppm",dirpath);
+		draw_grid(grid_source,X,Y,filepath);
+	}
+
 	runs = runs>>1u;
 	mup_per_call = (X-2)*(Y-2)/1.0e6;
 	//number of 
@@ -97,5 +106,17 @@ void printgrid(double*grid,uint32_t X, uint32_t Y){
 			}
 		fprintf(stdout,"\n");
 	}
+}
+
+void create_file_dir(char* path){
+	sprintf(path, "../images/loopunroll_4");
+	if (access(path, F_OK) != 0) {
+        // Directory does not exist, create it
+        if (mkdir(path, 0777) == 0) {
+            //Directory created successfully
+        }
+    } else {
+        //Directory already exists
+    }
 }
 

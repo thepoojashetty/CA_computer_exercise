@@ -11,7 +11,7 @@ INC_FLAGS := $(addprefix -iquote ,$(INC_DIRS))
 
 CC      := icc 
 CFLAGS  := -Wall -pedantic -Werror -std=c99 -O3 #-xHost
-CFLAGS  += -DBx=600 -DBy=10
+CFLAGS  += -DBx=300 -DBy=10
 
 LDFLAGS :=
 

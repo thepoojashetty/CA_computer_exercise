@@ -16,7 +16,7 @@ module load intel
 # TODO allocate a compute node
 
 # This line creates / overrides a result csv file
-echo "ArraySize,MegaUpdatesPerSecond,ActualRuntime,MinimalRuntime,EdgeSize" > result_cb_xy.csv
+echo "ArraySize,MegaUpdatesPerSecond,ActualRuntime,MinimalRuntime,EdgeSize" > result_cb.csv
 + echo ArraySize,MegaUpdatesPerSecond,ActualRuntime,MinimalRuntime,EdgeSize
 
 # TODO run benchmark 1
@@ -24,13 +24,198 @@ echo "ArraySize,MegaUpdatesPerSecond,ActualRuntime,MinimalRuntime,EdgeSize" > re
 # 32 measurement points, exponentially distributed: 1 Mib - 16 GiB, each with 1000 ms as minimal runtime
 # results should be appended to the result.csv (see >> operator)
 #root31(2^14) ^ i = e(i*ln(2^14)/31)
-# for i in {1..31}
-# do
-#     array_size=$(printf "%.0f" "$(echo "e($i*l(2^14)/31)" | bc -l)") #array size is now in Mib
-#     srun ../bin/jacobi $array_size 1000 >> result_cb_xy.csv
-# done
-srun ../bin/jacobi 512 1000 >> result_cb_xy.csv
-+ srun ../bin/jacobi 512 1000
+for i in {1..31}
+do
+    array_size=$(printf "%.0f" "$(echo "e($i*l(2^14)/31)" | bc -l)") #array size is now in Mib
+    srun ../bin/jacobi $array_size 1000 >> result_cb.csv
+done
++ for i in {1..31}
++++ echo 'e(1*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 1.36756831552639227044
++ array_size=1
++ srun ../bin/jacobi 1 1000
++ for i in {1..31}
++++ echo 'e(2*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 1.87024309763169400592
++ array_size=2
++ srun ../bin/jacobi 2 1000
++ for i in {1..31}
++++ echo 'e(3*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 2.55768520265303777274
++ array_size=3
++ srun ../bin/jacobi 3 1000
++ for i in {1..31}
++++ echo 'e(4*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 3.49780924423899411741
++ array_size=3
++ srun ../bin/jacobi 3 1000
++ for i in {1..31}
++++ echo 'e(5*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 4.78349309617656439216
++ array_size=5
++ srun ../bin/jacobi 5 1000
++ for i in {1..31}
++++ echo 'e(6*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 6.54175359587031089983
++ array_size=7
++ srun ../bin/jacobi 7 1000
++ for i in {1..31}
++++ echo 'e(7*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 8.94629494569308056393
++ array_size=9
++ srun ../bin/jacobi 9 1000
++ for i in {1..31}
++++ echo 'e(8*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 12.23466950908376320251
++ array_size=12
++ srun ../bin/jacobi 12 1000
++ for i in {1..31}
++++ echo 'e(9*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 16.73174637155979469792
++ array_size=17
++ srun ../bin/jacobi 17 1000
++ for i in {1..31}
++++ echo 'e(10*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 22.88180620116885431783
++ array_size=23
++ srun ../bin/jacobi 23 1000
++ for i in {1..31}
++++ echo 'e(11*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 31.29243316273384704837
++ array_size=31
++ srun ../bin/jacobi 31 1000
++ for i in {1..31}
++++ echo 'e(12*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 42.79454010908214294171
++ array_size=43
++ srun ../bin/jacobi 43 1000
++ for i in {1..31}
++++ echo 'e(13*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 58.52445713070409755067
++ array_size=59
++ srun ../bin/jacobi 59 1000
++ for i in {1..31}
++++ echo 'e(14*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 80.03619325533355931661
++ array_size=80
++ srun ../bin/jacobi 80 1000
++ for i in {1..31}
++++ echo 'e(15*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 109.45496199134131396417
++ array_size=109
++ srun ../bin/jacobi 109 1000
++ for i in {1..31}
++++ echo 'e(16*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 149.68713799650393128205
++ array_size=150
++ srun ../bin/jacobi 150 1000
++ for i in {1..31}
++++ echo 'e(17*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 204.70738716584550962282
++ array_size=205
++ srun ../bin/jacobi 205 1000
++ for i in {1..31}
++++ echo 'e(18*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 279.95133664220435545245
++ array_size=280
++ srun ../bin/jacobi 280 1000
++ for i in {1..31}
++++ echo 'e(19*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 382.85257788114138798501
++ array_size=383
++ srun ../bin/jacobi 383 1000
++ for i in {1..31}
++++ echo 'e(20*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 523.57705502784943596029
++ array_size=524
++ srun ../bin/jacobi 524 1000
++ for i in {1..31}
++++ echo 'e(21*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 716.02739119270524596648
++ array_size=716
++ srun ../bin/jacobi 716 1000
++ for i in {1..31}
++++ echo 'e(22*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 979.21637324416503766932
++ array_size=979
++ srun ../bin/jacobi 979 1000
++ for i in {1..31}
++++ echo 'e(23*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 1339.14528609338579413039
++ array_size=1339
++ srun ../bin/jacobi 1339 1000
++ for i in {1..31}
++++ echo 'e(24*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 1831.37266314784027072725
++ array_size=1831
++ srun ../bin/jacobi 1831 1000
++ for i in {1..31}
++++ echo 'e(25*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 2504.52722804217492913933
++ array_size=2505
++ srun ../bin/jacobi 2505 1000
++ for i in {1..31}
++++ echo 'e(26*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 3425.11208244362169074065
++ array_size=3425
++ srun ../bin/jacobi 3425 1000
++ for i in {1..31}
++++ echo 'e(27*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 4684.07476107651732375915
++ array_size=4684
++ srun ../bin/jacobi 4684 1000
++ for i in {1..31}
++++ echo 'e(28*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 6405.79223080510113094232
++ array_size=6406
++ srun ../bin/jacobi 6406 1000
++ for i in {1..31}
++++ echo 'e(29*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 8760.35849069418276351223
++ array_size=8760
++ srun ../bin/jacobi 8760 1000
++ for i in {1..31}
++++ echo 'e(30*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 11980.38870452597169803369
++ array_size=11980
++ srun ../bin/jacobi 11980 1000
++ for i in {1..31}
++++ echo 'e(31*l(2^14)/31)'
++++ bc -l
+++ printf %.0f 16383.99999999999999997952
++ array_size=16384
++ srun ../bin/jacobi 16384 1000
+# srun ../bin/jacobi 1 1000 >> result_cb_xy.csv
 
 # Note: copy the result.csv to a local machine!
 
