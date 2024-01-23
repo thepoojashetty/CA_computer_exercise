@@ -1,3 +1,4 @@
+#include <cuda.h>
 #include <cuda_runtime.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -7,15 +8,22 @@
 #include <malloc.h>
 #include <unistd.h>
 #include <immintrin.h>
+#include <time.h>
+#include <sys/time.h>
 
-
-const int n = 2147483648; // 2 GiB per array
+const int n = 134217728; // no of double elements in the array
 const double c = 2.0f; // Arbitrary constant (unequal to {0.0, 1.0})
 
+uint64_t get_time_us(void) {
+    struct timespec a;
+    clock_gettime(CLOCK_MONOTONIC, &a);
+    return (uint64_t) (((double) a.tv_nsec / 1000.0) + ((double) a.tv_sec * (1000.0 * 1000.0)));
+}
+
 // CUDA kernel for STREAM Triad
-__global__ void streamTriad(double *A, const double *B, const double *C, const double c, int size) {
+__global__ void streamTriad(double *A, const double *B, const double *C, const double c, int N) {
     int tid = blockIdx.x * blockDim.x + threadIdx.x;
-    if (tid < size) {
+    if (tid < N) {
         A[tid] = B[tid] * c + C[tid];
     }
 }
@@ -31,79 +39,68 @@ unsigned long long get_time_us_host() {
 }
 
 int main() {
+    uint64_t start, end,size;
     // Allocate and initialize arrays B and C on the CPU
-    /*unsigned long long start = 0u;
-	unsigned long long stop  = 0u;
-    unsigned long long runtime = 0u;*/
-    /*float *h_B = new float[n];
-    float *h_C = new float[n];*/
     printf("size of n");
-    printf("%" PRId64 "\n", n);
+    printf("%d\n", n);
 
+    size=n*sizeof(double);
     // Allocate memory on the host
-    double *h_B = (double*) _mm_malloc(n*sizeof(double),64);
-    double *h_C = (double*) _mm_malloc(n*sizeof(double),64);
+    double *h_A = (double*) _mm_malloc(size,64);
+    double *h_B = (double*) _mm_malloc(size,64);
+    double *h_C = (double*) _mm_malloc(size,64);
     for (int i = 0; i < n; ++i) {
-        h_B[i] = static_cast<double>(i);
-        h_C[i] = static_cast<double>(n - i);
+        h_B[i] = 1;
+        h_C[i] = 1;
     }
+
     double *d_A, *d_B, *d_C;
-    cudaMalloc((void**)&d_A, n*sizeof(double));
-    cudaMalloc((void**)&d_B, n*sizeof(double));
-    cudaMalloc((void**)&d_C, n*sizeof(double));
-    // Create CUDA events for timing
-    cudaEvent_t start, stop;
-    cudaEventCreate(&start);
-    cudaEventCreate(&stop);
-    float milliseconds = 0;
-    float dataTxTime = 0;
-    float execTime = 0;
-    float totalExecTime = 0;
-    // Copy arrays B and C from host to device
-    cudaEventRecord(start);
-    cudaMemcpy(d_B, h_B, n*sizeof(double) , cudaMemcpyHostToDevice);
-    cudaMemcpy(d_C, h_C, n*sizeof(double) , cudaMemcpyHostToDevice);
-    cudaEventRecord(stop);
-    cudaEventSynchronize(stop);
-    cudaEventElapsedTime(&milliseconds, start, stop);
-    dataTxTime+=milliseconds;
+    cudaMalloc((void**)&d_A, size);
+    cudaMalloc((void**)&d_B, size);
+    cudaMalloc((void**)&d_C, size);
 
-    printf("Host to device data transfer time: %f ms\n",milliseconds);
+    start = get_time_us();
+    // cudaMemcpy(d_A, A, GB, cudaMemcpyHostToDevice);
+    cudaMemcpy(d_B, h_B, size, cudaMemcpyHostToDevice);
+    cudaMemcpy(d_C, h_C, size, cudaMemcpyHostToDevice);
+    end = get_time_us();
+    double toGPU_s = ((double)(end - start))/1000000.0;
 
-    // Configure kernel launch parameters
-    /*int blockSize = 512; //512 threads per block
-    int gridSize = (n + blockSize - 1) / blockSize;*/
-    dim3 threadsPerBlock(16, 16);
-    dim3 numBlocks((n*sizeof(double) + threadsPerBlock.x -1) / threadsPerBlock.x, (n*sizeof(double)+threadsPerBlock.y -1) / threadsPerBlock.y);
+    printf("Copying data to gpu took: %lf seconds\n", toGPU_s);
+
+    int threadsPerBlock = 512;
+    int blocksPerGrid = (n + threadsPerBlock - 1) / threadsPerBlock;
     // Launch the STREAM Triad kernel
+    start = get_time_us();
+    streamTriad<<<blocksPerGrid, threadsPerBlock>>>(d_A, d_B, d_C, c, n);
+    cudaDeviceSynchronize();
+    end = get_time_us();
+    double runKernel_s = ((double)(end - start))/1000000.0;
+    printf("Running kernel took: %lf seconds\n", runKernel_s);
 
-    // Record start time
-    cudaEventRecord(start);
-    printf("Running kernel now!\n");
-    streamTriad<<<numBlocks, threadsPerBlock>>>(d_A, d_B, d_C, c, n);
-    printf("done executing kernel !\n");
-    // Record stop time
-    cudaEventRecord(stop);
-    cudaEventSynchronize(stop);
-    cudaEventElapsedTime(&milliseconds, start, stop);
-    execTime+=milliseconds;
-    totalExecTime = execTime+dataTxTime;
-    printf("Kernel execution time: %f ms\n",execTime);
-    printf("Total execution time: %f ms\n",totalExecTime);
-    // Copy array A from device to host for verification
-    cudaMemcpy(h_B, d_A, n, cudaMemcpyDeviceToHost);
+    // Copy the results back to the host
+    start = get_time_us();
+    cudaMemcpy(h_A, d_A, size, cudaMemcpyDeviceToHost);
+    end = get_time_us();
+    double toCPU_s = ((double)(end - start))/1000000.0;
+    printf("Copying data to cpu took: %lf seconds\n", toCPU_s);
+
+    // Print the results
+    printf("A[0] = %f\n", h_A[0]);
+    printf("A[n-1] = %f\n", h_A[n-1]);
+
+    // Compute the bandwidth
+    printf("Internal memory GPU bandwidth : %lf GB/s\n", (double)3/runKernel_s);
+    printf("External memory GPU bandwidth : %lf GB/s\n", (double)3/(toGPU_s+runKernel_s+toCPU_s));
 
     // Free allocated memory on the GPU
     cudaFree(d_A);
     cudaFree(d_B);
     cudaFree(d_C);
 
-    // Destroy CUDA events
-    cudaEventDestroy(start);
-    cudaEventDestroy(stop);
     // Free allocated memory on the CPU
-    delete[] h_B;
-    delete[] h_C;
-
+    free(h_B);
+    free(h_C);
+    free(h_A);
     return 0;
 }

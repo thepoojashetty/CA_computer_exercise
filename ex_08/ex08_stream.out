@@ -1,0 +1,46 @@
+### Starting TaskPrologue of job 748442 on tg080 at Tue 23 Jan 2024 10:50:37 AM CET
+Running on cores 18-19,26-27,50-51,58-59 with governor ondemand
+Tue Jan 23 10:50:37 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.113.01             Driver Version: 535.113.01   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA GeForce RTX 3080        On  | 00000000:3E:00.0 Off |                  N/A |
+| 30%   31C    P8              16W / 300W |      2MiB / 10240MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+=== JOB_STATISTICS ===
+=== current date     : Tue 23 Jan 2024 10:50:39 AM CET
+= Job-ID             : 748442 on tinygpu
+= Job-Name           : CA_EX8_stream
+= Job-Command        : ./tinyx.sh
+= Initial workdir    : /home/hpc/rzku/hpcv720h/ex_08/scripts
+= Queue/Partition    : work
+= Slurm account      : rzku with QOS=normal
+= Requested resources: cpu=8,mem=23000M,node=1,billing=8,gres/gpu=1,gres/gpu:rtx3080=1 for 02:00:00
+= Elapsed runtime    : 00:00:04
+= Total RAM usage    : 0.0 GiB of requested 22 GiB (0.0%)   
+= Node list          : tg080
+= Subm/Elig/Start/End: 2024-01-23T10:43:42 / 2024-01-23T10:43:42 / 2024-01-23T10:50:35 / 2024-01-23T10:50:39
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc         2246.5M   104.9G   209.7G        N/A   8,693      500K   1,000K        N/A    
+    /home/vault          0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
+    /home/woody          4.0K   500.0G   750.0G        N/A       1    5,000K   7,500K        N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
