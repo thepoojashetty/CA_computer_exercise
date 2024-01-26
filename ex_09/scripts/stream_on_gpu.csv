@@ -1,0 +1,8 @@
+size of n134217728
+Copying data to gpu took: 0.462067 seconds
+Running kernel took: 0.000079 seconds
+Copying data to cpu took: 0.222397 seconds
+gridTgtHst[0] = 1.000000
+gridTgtHst[n-1] = 0.000000
+Internal memory GPU bandwidth : 37974.683544 GB/s
+External memory GPU bandwidth : 4.382486 GB/s

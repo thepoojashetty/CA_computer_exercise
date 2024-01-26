@@ -1,0 +1,173 @@
++ set -v
+
+# Load module with icc compiler
+module load intel
++ module load intel
++ local _mlredir=0
++ '[' -n '' ']'
++ case " $@ " in
++ '[' 0 -eq 0 ']'
++ _module_raw load intel
+++ /usr/bin/tclsh /apps/modules/modulecmd.tcl bash load intel
++ eval 'OCL_ICD_FILENAMES=libintelocl_emu.so:libalteracl.so:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/x64/libintelocl.so; export OCL_ICD_FILENAMES;
+LD_LIBRARY_PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/x64:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga/host/linux64/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/compiler/lib/intel64_lin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/lib64; export LD_LIBRARY_PATH;
+CPATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga/include; export CPATH;
+CMPLR_ROOT=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1; export CMPLR_ROOT;
+LIBRARY_PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/compiler/lib/intel64_lin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib; export LIBRARY_PATH;
+MANPATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/documentation/en/man/common:; export MANPATH;
+_LMFILES_=/apps/modules/data/development/cuda/11.8.0:/apps/modules/data/compiler/intel/2023.2.1; export _LMFILES_;
+LOADEDMODULES=cuda/11.8.0:intel/2023.2.1; export LOADEDMODULES;
+CMAKE_PREFIX_PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/IntelDPCPP:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/; export CMAKE_PREFIX_PATH;
+PKG_CONFIG_PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/lib/pkgconfig; export PKG_CONFIG_PATH;
+FPGA_VARS_ARGS=; export FPGA_VARS_ARGS;
+INTEL_ONEAPI_COMPILERS_ROOT=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh; export INTEL_ONEAPI_COMPILERS_ROOT;
+ACL_BOARD_VENDOR_PATH=/opt/Intel/OpenCLFPGA/oneAPI/Boards; export ACL_BOARD_VENDOR_PATH;
+__MODULES_LMALTNAME=cuda/11.8.0\&as\|cuda/default\&as\|cuda/latest:intel/2023.2.1\&as\|intel/default\&as\|intel/latest; export __MODULES_LMALTNAME;
+__MODULES_LMCONFLICT=cuda/11.8.0\&cuda:intel/2023.2.1\&intel-oneapi-compilers; export __MODULES_LMCONFLICT;
+__MODULES_SHARE_MANPATH=:1; export __MODULES_SHARE_MANPATH;
+NLSPATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/compiler/lib/intel64_lin/locale/%l_%t/%N; export NLSPATH;
+PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga/bin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/bin/intel64:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/bin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin; export PATH;
+INTELFPGAOCLSDKROOT=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga; export INTELFPGAOCLSDKROOT;
+DIAGUTIL_PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/sys_check/sys_check.sh; export DIAGUTIL_PATH;
+FPGA_VARS_DIR=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga; export FPGA_VARS_DIR;
+test 0;'
+OCL_ICD_FILENAMES=libintelocl_emu.so:libalteracl.so:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/x64/libintelocl.so; export OCL_ICD_FILENAMES;
+++ OCL_ICD_FILENAMES=libintelocl_emu.so:libalteracl.so:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/x64/libintelocl.so
+++ export OCL_ICD_FILENAMES
+LD_LIBRARY_PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/x64:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga/host/linux64/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/compiler/lib/intel64_lin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/lib64; export LD_LIBRARY_PATH;
+++ LD_LIBRARY_PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/x64:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga/host/linux64/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/compiler/lib/intel64_lin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/lib64
+++ export LD_LIBRARY_PATH
+CPATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga/include; export CPATH;
+++ CPATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga/include
+++ export CPATH
+CMPLR_ROOT=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1; export CMPLR_ROOT;
+++ CMPLR_ROOT=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1
+++ export CMPLR_ROOT
+LIBRARY_PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/compiler/lib/intel64_lin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib; export LIBRARY_PATH;
+++ LIBRARY_PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/compiler/lib/intel64_lin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib
+++ export LIBRARY_PATH
+MANPATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/documentation/en/man/common:; export MANPATH;
+++ MANPATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/documentation/en/man/common:
+++ export MANPATH
+_LMFILES_=/apps/modules/data/development/cuda/11.8.0:/apps/modules/data/compiler/intel/2023.2.1; export _LMFILES_;
+++ _LMFILES_=/apps/modules/data/development/cuda/11.8.0:/apps/modules/data/compiler/intel/2023.2.1
+++ export _LMFILES_
+LOADEDMODULES=cuda/11.8.0:intel/2023.2.1; export LOADEDMODULES;
+++ LOADEDMODULES=cuda/11.8.0:intel/2023.2.1
+++ export LOADEDMODULES
+CMAKE_PREFIX_PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/IntelDPCPP:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/; export CMAKE_PREFIX_PATH;
+++ CMAKE_PREFIX_PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/IntelDPCPP:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/
+++ export CMAKE_PREFIX_PATH
+PKG_CONFIG_PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/lib/pkgconfig; export PKG_CONFIG_PATH;
+++ PKG_CONFIG_PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/lib/pkgconfig
+++ export PKG_CONFIG_PATH
+FPGA_VARS_ARGS=; export FPGA_VARS_ARGS;
+++ FPGA_VARS_ARGS=
+++ export FPGA_VARS_ARGS
+INTEL_ONEAPI_COMPILERS_ROOT=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh; export INTEL_ONEAPI_COMPILERS_ROOT;
+++ INTEL_ONEAPI_COMPILERS_ROOT=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh
+++ export INTEL_ONEAPI_COMPILERS_ROOT
+ACL_BOARD_VENDOR_PATH=/opt/Intel/OpenCLFPGA/oneAPI/Boards; export ACL_BOARD_VENDOR_PATH;
+++ ACL_BOARD_VENDOR_PATH=/opt/Intel/OpenCLFPGA/oneAPI/Boards
+++ export ACL_BOARD_VENDOR_PATH
+__MODULES_LMALTNAME=cuda/11.8.0\&as\|cuda/default\&as\|cuda/latest:intel/2023.2.1\&as\|intel/default\&as\|intel/latest; export __MODULES_LMALTNAME;
+++ __MODULES_LMALTNAME='cuda/11.8.0&as|cuda/default&as|cuda/latest:intel/2023.2.1&as|intel/default&as|intel/latest'
+++ export __MODULES_LMALTNAME
+__MODULES_LMCONFLICT=cuda/11.8.0\&cuda:intel/2023.2.1\&intel-oneapi-compilers; export __MODULES_LMCONFLICT;
+++ __MODULES_LMCONFLICT='cuda/11.8.0&cuda:intel/2023.2.1&intel-oneapi-compilers'
+++ export __MODULES_LMCONFLICT
+__MODULES_SHARE_MANPATH=:1; export __MODULES_SHARE_MANPATH;
+++ __MODULES_SHARE_MANPATH=:1
+++ export __MODULES_SHARE_MANPATH
+NLSPATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/compiler/lib/intel64_lin/locale/%l_%t/%N; export NLSPATH;
+++ NLSPATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/compiler/lib/intel64_lin/locale/%l_%t/%N
+++ export NLSPATH
+PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga/bin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/bin/intel64:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/bin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin; export PATH;
+++ PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga/bin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/bin/intel64:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/bin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+++ export PATH
+INTELFPGAOCLSDKROOT=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga; export INTELFPGAOCLSDKROOT;
+++ INTELFPGAOCLSDKROOT=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga
+++ export INTELFPGAOCLSDKROOT
+DIAGUTIL_PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/sys_check/sys_check.sh; export DIAGUTIL_PATH;
+++ DIAGUTIL_PATH=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/sys_check/sys_check.sh
+++ export DIAGUTIL_PATH
+FPGA_VARS_DIR=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga; export FPGA_VARS_DIR;
+++ FPGA_VARS_DIR=/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga
+++ export FPGA_VARS_DIR
+test 0;
+++ test 0
++ _mlstatus=0
++ return 0
+module load likwid/5.3.0
++ module load likwid/5.3.0
++ local _mlredir=0
++ '[' -n '' ']'
++ case " $@ " in
++ '[' 0 -eq 0 ']'
++ _module_raw load likwid/5.3.0
+++ /usr/bin/tclsh /apps/modules/modulecmd.tcl bash load likwid/5.3.0
++ eval 'LD_LIBRARY_PATH=/apps/likwid/5.3.0/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/x64:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga/host/linux64/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/compiler/lib/intel64_lin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/lib64; export LD_LIBRARY_PATH;
+LIKWID_LIBDIR=/apps/likwid/5.3.0/lib; export LIKWID_LIBDIR;
+MANPATH=/apps/likwid/5.3.0/man:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/documentation/en/man/common:; export MANPATH;
+LOADEDMODULES=cuda/11.8.0:intel/2023.2.1:likwid/5.3.0; export LOADEDMODULES;
+_LMFILES_=/apps/modules/data/development/cuda/11.8.0:/apps/modules/data/compiler/intel/2023.2.1:/apps/modules/data/tools/likwid/5.3.0; export _LMFILES_;
+LIKWID_INCDIR=/apps/likwid/5.3.0/include; export LIKWID_INCDIR;
+LIKWID_INC=-I/apps/likwid/5.3.0/include; export LIKWID_INC;
+__MODULES_LMALTNAME=cuda/11.8.0\&as\|cuda/default\&as\|cuda/latest:intel/2023.2.1\&as\|intel/default\&as\|intel/latest:likwid/5.3.0\&as\|likwid/default\&as\|likwid/latest; export __MODULES_LMALTNAME;
+__MODULES_SHARE_MANPATH=:1; export __MODULES_SHARE_MANPATH;
+__MODULES_LMCONFLICT=cuda/11.8.0\&cuda:intel/2023.2.1\&intel-oneapi-compilers:likwid/5.3.0\&likwid; export __MODULES_LMCONFLICT;
+LIKWID_LIB=-L/apps/likwid/5.3.0/lib; export LIKWID_LIB;
+LIKWID_FORCE=1; export LIKWID_FORCE;
+PATH=/apps/likwid/5.3.0/bin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga/bin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/bin/intel64:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/bin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin; export PATH;
+test 0;'
+LD_LIBRARY_PATH=/apps/likwid/5.3.0/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/x64:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga/host/linux64/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/compiler/lib/intel64_lin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/lib64; export LD_LIBRARY_PATH;
+++ LD_LIBRARY_PATH=/apps/likwid/5.3.0/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/x64:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga/host/linux64/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/compiler/lib/intel64_lin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/lib:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/lib64
+++ export LD_LIBRARY_PATH
+LIKWID_LIBDIR=/apps/likwid/5.3.0/lib; export LIKWID_LIBDIR;
+++ LIKWID_LIBDIR=/apps/likwid/5.3.0/lib
+++ export LIKWID_LIBDIR
+MANPATH=/apps/likwid/5.3.0/man:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/documentation/en/man/common:; export MANPATH;
+++ MANPATH=/apps/likwid/5.3.0/man:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/documentation/en/man/common:
+++ export MANPATH
+LOADEDMODULES=cuda/11.8.0:intel/2023.2.1:likwid/5.3.0; export LOADEDMODULES;
+++ LOADEDMODULES=cuda/11.8.0:intel/2023.2.1:likwid/5.3.0
+++ export LOADEDMODULES
+_LMFILES_=/apps/modules/data/development/cuda/11.8.0:/apps/modules/data/compiler/intel/2023.2.1:/apps/modules/data/tools/likwid/5.3.0; export _LMFILES_;
+++ _LMFILES_=/apps/modules/data/development/cuda/11.8.0:/apps/modules/data/compiler/intel/2023.2.1:/apps/modules/data/tools/likwid/5.3.0
+++ export _LMFILES_
+LIKWID_INCDIR=/apps/likwid/5.3.0/include; export LIKWID_INCDIR;
+++ LIKWID_INCDIR=/apps/likwid/5.3.0/include
+++ export LIKWID_INCDIR
+LIKWID_INC=-I/apps/likwid/5.3.0/include; export LIKWID_INC;
+++ LIKWID_INC=-I/apps/likwid/5.3.0/include
+++ export LIKWID_INC
+__MODULES_LMALTNAME=cuda/11.8.0\&as\|cuda/default\&as\|cuda/latest:intel/2023.2.1\&as\|intel/default\&as\|intel/latest:likwid/5.3.0\&as\|likwid/default\&as\|likwid/latest; export __MODULES_LMALTNAME;
+++ __MODULES_LMALTNAME='cuda/11.8.0&as|cuda/default&as|cuda/latest:intel/2023.2.1&as|intel/default&as|intel/latest:likwid/5.3.0&as|likwid/default&as|likwid/latest'
+++ export __MODULES_LMALTNAME
+__MODULES_SHARE_MANPATH=:1; export __MODULES_SHARE_MANPATH;
+++ __MODULES_SHARE_MANPATH=:1
+++ export __MODULES_SHARE_MANPATH
+__MODULES_LMCONFLICT=cuda/11.8.0\&cuda:intel/2023.2.1\&intel-oneapi-compilers:likwid/5.3.0\&likwid; export __MODULES_LMCONFLICT;
+++ __MODULES_LMCONFLICT='cuda/11.8.0&cuda:intel/2023.2.1&intel-oneapi-compilers:likwid/5.3.0&likwid'
+++ export __MODULES_LMCONFLICT
+LIKWID_LIB=-L/apps/likwid/5.3.0/lib; export LIKWID_LIB;
+++ LIKWID_LIB=-L/apps/likwid/5.3.0/lib
+++ export LIKWID_LIB
+LIKWID_FORCE=1; export LIKWID_FORCE;
+++ LIKWID_FORCE=1
+++ export LIKWID_FORCE
+PATH=/apps/likwid/5.3.0/bin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga/bin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/bin/intel64:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/bin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin; export PATH;
+++ PATH=/apps/likwid/5.3.0/bin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/lib/oclfpga/bin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/bin/intel64:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/intel-oneapi-compilers-2023.2.1-w5xspo5smexqooptupdcekxiosxeltyh/compiler/2023.2.1/linux/bin:/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+++ export PATH
+test 0;
+++ test 0
++ _mlstatus=0
++ return 0
+# module load cuda
+
+#srun likwid-pin -c E:S0:10 ../bin/stream >stream_on_cpu.csv
+srun ../bin/jacobi >stream_on_gpu.csv
++ srun ../bin/jacobi
+
+touch ready
++ touch ready
