@@ -1,6 +1,6 @@
-### Starting TaskPrologue of job 750723 on tg081 at Fri 26 Jan 2024 04:32:59 PM CET
-Running on cores 20-23,52-55 with governor ondemand
-Fri Jan 26 16:32:59 2024       
+### Starting TaskPrologue of job 750391 on tg080 at Fri 26 Jan 2024 09:05:00 AM CET
+Running on cores 18-21,50-53 with governor ondemand
+Fri Jan 26 09:05:00 2024       
 +---------------------------------------------------------------------------------------+
 | NVIDIA-SMI 535.113.01             Driver Version: 535.113.01   CUDA Version: 12.2     |
 |-----------------------------------------+----------------------+----------------------+
@@ -9,7 +9,7 @@ Fri Jan 26 16:32:59 2024
 |                                         |                      |               MIG M. |
 |=========================================+======================+======================|
 |   0  NVIDIA GeForce RTX 3080        On  | 00000000:B2:00.0 Off |                  N/A |
-| 30%   33C    P8              10W / 300W |      2MiB / 10240MiB |      0%      Default |
+| 30%   32C    P8              16W / 300W |      2MiB / 10240MiB |      0%      Default |
 |                                         |                      |                  N/A |
 +-----------------------------------------+----------------------+----------------------+
                                                                                          
@@ -23,25 +23,25 @@ Fri Jan 26 16:32:59 2024
 ### Finished TaskPrologue
 
 === JOB_STATISTICS ===
-=== current date     : Fri 26 Jan 2024 04:33:07 PM CET
-= Job-ID             : 750723 on tinygpu
-= Job-Name           : CA_EX8_stream
+=== current date     : Fri 26 Jan 2024 09:05:13 AM CET
+= Job-ID             : 750391 on tinygpu
+= Job-Name           : CA_EX9_stream
 = Job-Command        : ./tinyx.sh
-= Initial workdir    : /home/hpc/rzku/hpcv651h/gitrepo/CA_computer_exercise/ex_09/scripts
+= Initial workdir    : /home/hpc/rzku/hpcv720h/ex_09/jacobi/scripts
 = Queue/Partition    : work
 = Slurm account      : rzku with QOS=normal
 = Requested resources: cpu=8,mem=23000M,node=1,billing=8,gres/gpu=1,gres/gpu:rtx3080=1 for 02:00:00
-= Elapsed runtime    : 00:00:12
+= Elapsed runtime    : 00:00:14
 = Total RAM usage    : 0.0 GiB of requested 22 GiB (0.0%)   
-= Node list          : tg081
-= Subm/Elig/Start/End: 2024-01-26T16:32:54 / 2024-01-26T16:32:54 / 2024-01-26T16:32:55 / 2024-01-26T16:33:07
+= Node list          : tg080
+= Subm/Elig/Start/End: 2024-01-26T09:04:59 / 2024-01-26T09:04:59 / 2024-01-26T09:04:59 / 2024-01-26T09:05:13
 ======================
 === Quota infos ======
     Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
-    /home/hpc         4536.2M   104.9G   209.7G        N/A  23,664      500K   1,000K        N/A    
+    /home/hpc         2368.0M   104.9G   209.7G        N/A   8,758      500K   1,000K        N/A    
     /home/vault          0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
     /home/woody          4.0K   500.0G   750.0G        N/A       1    5,000K   7,500K        N/A    
 ======================
 === GPU utilization ==
 gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
-NVIDIA GeForce RTX 3080, 00000000:B2:00.0, 1169247, 14 %, 0 %, 2262 MiB, 927 ms
+NVIDIA GeForce RTX 3080, 00000000:B2:00.0, 4003715, 9 %, 3 %, 6360 MiB, 12107 ms

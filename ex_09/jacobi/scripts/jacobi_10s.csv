@@ -1,0 +1,6 @@
+Minimum runtime: 10 s
+Copying data to gpu took: 2.373883 seconds
+Running kernel took: 11.592108 seconds
+Copying data to cpu took: 1.344756 seconds
+Internal memory GPU bandwidth : 530.015766 GB/s
+External memory GPU bandwidth : 401.286756 GB/s
