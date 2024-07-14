@@ -1,1 +1,8 @@
 .DS_Store
+ex_00/.DS_Store
+ex_09/ex09_stream.err
+ex_09/ex09_stream.out
+ex_09/jacobi/build/*
+ex_09/jacobi/scripts/*
+ex_10/ex10_stream.err
+ex_10/ex10_stream.out

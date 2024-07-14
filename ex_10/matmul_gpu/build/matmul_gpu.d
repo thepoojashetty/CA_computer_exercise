@@ -1,4 +1,4 @@
-build/jacobi.o : src/jacobi.cu \
+build/matmul_gpu.o : src/matmul_gpu.cu \
     /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cuda_runtime.h \
     /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/crt/host_config.h \
     /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/builtin_types.h \
@@ -55,7 +55,14 @@ build/jacobi.o : src/jacobi.cu \
     /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/crt/cudacc_ext.h \
     /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/device_launch_parameters.h \
     /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cuda.h \
-    ./src/include/draw.h
+    /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/curand.h \
+    /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cublas_v2.h \
+    /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cublas_api.h \
+    /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cuComplex.h \
+    /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cuda_fp16.h \
+    /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cuda_fp16.hpp \
+    /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cuda_bf16.h \
+    /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cuda_bf16.hpp
 
 /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cuda_runtime.h:
 
@@ -169,4 +176,18 @@ build/jacobi.o : src/jacobi.cu \
 
 /apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cuda.h:
 
-./src/include/draw.h:
+/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/curand.h:
+
+/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cublas_v2.h:
+
+/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cublas_api.h:
+
+/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cuComplex.h:
+
+/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cuda_fp16.h:
+
+/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cuda_fp16.hpp:
+
+/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cuda_bf16.h:
+
+/apps/SPACK/0.18.1/opt/linux-ubuntu20.04-broadwell/gcc-9.4.0/cuda-11.8.0-2jxq6jhnispqnxoz4odjhzmf44zo2gbb/bin/../targets/x86_64-linux/include/cuda_bf16.hpp:

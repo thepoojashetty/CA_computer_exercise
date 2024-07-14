@@ -12,7 +12,7 @@ module load cuda
 + _mlstatus=0
 + return 0
 
-srun ../bin/stream_gpu >jacobi_100ms.csv
+srun ../bin/stream_gpu >jacobi_1s.csv
 + srun ../bin/stream_gpu
 
 touch ready

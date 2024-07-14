@@ -13,6 +13,6 @@ set -v
 
 module load cuda
 
-srun ../bin/stream_gpu >jacobi_100ms.csv
+srun ../bin/stream_gpu >jacobi_1s.csv
 
 touch ready

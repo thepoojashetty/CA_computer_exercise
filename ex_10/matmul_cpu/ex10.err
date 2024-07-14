@@ -1,0 +1,32 @@
++ set -v
+
+# Load module with icc compiler
+module load intel
++ module load intel
++ local _mlredir=0
++ '[' -n '' ']'
++ case " $@ " in
++ '[' 0 -eq 0 ']'
++ _module_raw load intel
+++ /usr/bin/tclsh /apps/modules/modulecmd.tcl bash load intel
++ eval ''
++ _mlstatus=0
++ return 0
+module load mkl
++ module load mkl
++ local _mlredir=0
++ '[' -n '' ']'
++ case " $@ " in
++ '[' 0 -eq 0 ']'
++ _module_raw load mkl
+++ /usr/bin/tclsh /apps/modules/modulecmd.tcl bash load mkl
++ eval ''
++ _mlstatus=0
++ return 0
+
+srun ../bin/dgemm_cpu > matmul_cpu.txt
++ srun ../bin/dgemm_cpu
+
+touch ready
++ touch ready
+

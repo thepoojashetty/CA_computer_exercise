@@ -10,6 +10,13 @@
 #include <immintrin.h>
 #include <time.h>
 #include <sys/time.h>
+#include <string.h>
+extern "C" {
+    #include "draw.h"
+}
+
+void create_file_dir(char* path);
+//s
 
 uint64_t get_time_us(void) {
     struct timespec a;
@@ -18,9 +25,9 @@ uint64_t get_time_us(void) {
 }
 
 // CUDA kernel for jacobi iteration on the GPU
-__global__ void jacobi(double* grid_source, double* grid_target, uint32_t *_X, uint32_t *_Y) {
-    uint32_t X = *_X;
-    uint32_t Y = *_Y;
+__global__ void jacobi(double* grid_source, double* grid_target, uint32_t _X, uint32_t _Y) {
+    uint32_t X = _X;
+    uint32_t Y = _Y;
     uint32_t x = blockIdx.x * blockDim.x + threadIdx.x;
     uint32_t y = blockIdx.y * blockDim.y + threadIdx.y;
     if(x>0 && x<X-1 && y>0 && y<Y-1) {
@@ -30,27 +37,39 @@ __global__ void jacobi(double* grid_source, double* grid_target, uint32_t *_X, u
 
 int main() {
     uint64_t start, end;
-    uint32_t sizeGib = 3;
-    uint64_t sizeBytes = sizeGib*1024*1024*1024;
+    // uint32_t sizeGib = 3;
+    // uint64_t sizeBytes = sizeGib*1024*1024*1024;
+    uint64_t sizeBytes = 60000;
     uint32_t X = sqrt(sizeBytes/sizeof(double));
     uint32_t Y = X;
     uint32_t size = X*Y;
-    uint64_t minimum_runtime_ms = 100;
-    uint64_t minimal_runtime_us = minimum_runtime_ms * 1000u;
+    uint64_t minimum_runtime_s = 1;
+    uint64_t minimal_runtime_us = minimum_runtime_s * 1000000u;
 
-    printf("Minimum runtime: %" PRIu64 " ms\n", minimum_runtime_ms);
+	char filepath[100],dirpath[100];
+    create_file_dir(dirpath);
+
+    printf("Minimum runtime: %" PRIu64 " s\n", minimum_runtime_s);
 
     // Allocate memory on the host
     double *grid_source = (double*) _mm_malloc(size*sizeof(double),64);
     double *grid_target = (double*) _mm_malloc(size*sizeof(double),64);
 
+    // Initialize the grid
+    for(uint32_t i=0;i<Y;i++){
+        for(uint32_t j=0;j<X;j++){
+            if (i == 0 || j == 0){
+                grid_source[i * X + j] = grid_target[i * X + j] = 1.0;
+            }
+            else{
+                grid_source[i * X + j] = grid_target[i * X + j] = 0.0;
+            }
+        }
+	}
+
     double *d_grid_source, *d_grid_target;
     cudaMalloc((void**)&d_grid_source, size*sizeof(double));
     cudaMalloc((void**)&d_grid_target, size*sizeof(double));
-
-    uint32_t *d_X, *d_Y;
-    cudaMalloc((void**)&d_X, sizeof(uint32_t));
-    cudaMalloc((void**)&d_Y, sizeof(uint32_t));
 
     int threadsPerBlockX = 32;
     int threadsPerBlockY = 32;
@@ -63,8 +82,6 @@ int main() {
     // cudaMemcpy(d_A, A, GB, cudaMemcpyHostToDevice);
     cudaMemcpy(d_grid_source, grid_source, size*sizeof(double), cudaMemcpyHostToDevice);
     cudaMemcpy(d_grid_target, grid_target, size*sizeof(double), cudaMemcpyHostToDevice);
-    cudaMemcpy(d_X, &X, sizeof(uint32_t), cudaMemcpyHostToDevice);
-    cudaMemcpy(d_Y, &Y, sizeof(uint32_t), cudaMemcpyHostToDevice);
     end = get_time_us();
     double toGPU_s = ((double)(end - start))/1000000.0;
     printf("Copying data to gpu took: %lf seconds\n", toGPU_s);
@@ -75,19 +92,9 @@ int main() {
     uint64_t runs           = 0u;
     double *temp;
     for(runs = 1u; actual_runtime < minimal_runtime_us; runs = runs << 1u) {
-		for(uint32_t i=0;i<Y;i++){
-			for(uint32_t j=0;j<X;j++){
-				if (i == 0 || j == 0){
-					grid_source[i * X + j] = grid_target[i * X + j] = 1.0;
-				}
-				else{
-					grid_source[i * X + j] = grid_target[i * X + j] = 0.0;
-				}
-			}
-		}
 		start = get_time_us();
 		for(uint64_t i = 0u; i < runs; i++) {
-			jacobi<<<blocksPerGrid, threadsPerBlock>>>(d_grid_source, d_grid_target, d_X, d_Y);
+			jacobi<<<blocksPerGrid, threadsPerBlock>>>(d_grid_source, d_grid_target, X, Y);
             cudaDeviceSynchronize();
 			//swap source and target
 			temp=d_grid_source;
@@ -109,6 +116,10 @@ int main() {
     double toCPU_s = ((double)(end - start))/1000000.0;
     printf("Copying data to cpu took: %lf seconds\n", toCPU_s);
 
+    // Write the results to a file
+    // sprintf(filepath, "%s/grid.ppm",dirpath);
+	draw_grid(grid_target,X,Y,"grid.ppm");
+
     // Compute the bandwidth
     printf("Internal memory GPU bandwidth : %lf GB/s\n", (double)(runs*6)/runKernel_s);
     printf("External memory GPU bandwidth : %lf GB/s\n", (double)(runs*6)/(toGPU_s+runKernel_s+toCPU_s));
@@ -121,4 +132,16 @@ int main() {
     free(grid_source);
     free(grid_target);
     return 0;
+}
+
+void create_file_dir(char* path){
+	sprintf(path, "../images/loopunroll_4");
+	if (access(path, F_OK) != 0) {
+        // Directory does not exist, create it
+        if (mkdir(path, 0777) == 0) {
+            //Directory created successfully
+        }
+    } else {
+        //Directory already exists
+    }
 }

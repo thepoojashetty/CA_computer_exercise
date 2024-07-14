@@ -1,0 +1,28 @@
+### Starting TaskPrologue of job 2273867 on m0862 at Mon Feb  5 17:38:22 CET 2024
+#   SLURM_JOB_NODELIST=m0862
+#   SLURM_JOB_NUM_NODES=1
+#   SLURM_NTASKS=1
+#   SLURM_NPROCS=1
+#   SLURM_TASKS_PER_NODE=1
+#   SLURM_JOB_CPUS_PER_NODE=20
+#   SLURM_EXPORT_ENV=
+Running on cores 0-19 with governor ondemand
+### Finished TaskPrologue
+=== JOB_STATISTICS ===
+=== current date     : Mon Feb  5 17:43:36 CET 2024
+= Job-ID             : 2273867 on meggie
+= Job-Name           : CA_EX10_dgemm_cpu
+= Job-Command        : ./meggie.sh
+= Initial workdir    : /home/hpc/rzku/hpcv720h/ex_10/matmul_cpu/scripts
+= Queue/Partition    : work
+= Slurm account      : rzku with QOS=normal
+= Requested resources: cpu=20,node=1,billing=20 for 02:00:00
+= Elapsed runtime    : 00:05:14
+= Total RAM usage    : 45.0 GiB 
+= Node list          : m0862
+= Subm/Elig/Start/End: 2024-02-05T17:38:16 / 2024-02-05T17:38:16 / 2024-02-05T17:38:22 / 2024-02-05T17:43:36
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc         3151.8M   104.9G   209.7G        N/A  11,863      500K   1,000K        N/A    
+======================

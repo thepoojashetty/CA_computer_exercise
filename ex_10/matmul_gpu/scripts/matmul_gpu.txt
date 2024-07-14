@@ -1,0 +1,2 @@
+Running matmul took: 28.497738 seconds
+Floating point performance with GPU : 457456941459.704651 Flops/s
